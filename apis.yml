@@ -1,23 +1,82 @@
 aid: autosled
+
 name: Autosled
-description: 'Autosled is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://autosled.com/wp-content/uploads/2021/11/cropped-Untitled-design-83-1-e1603983203766-1.png
+
+description: 'Autosled is a marketplace for vehicle shippers and transporters, providing a modern digital platform to manage shipments, payments, and logistics. It connects carriers with customers, offering tools for tracking, quoting, and optimizing transport processes across the United States.'
+
 url: https://raw.githubusercontent.com/api-evangelist/autosled/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Logistics
+- Transportation
+- Marketplace
+- Shipping
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/autosled-llms.txt
+- type: Hosts
+  url: hosts/autosled-hosts.yml
+- type: PrivacyPolicy
+  url: https://autosled.com/privacy-policy
+- type: Newsroom
+  url: https://autosled.com/category/autosled-blog/news/
+- type: Blog
+  url: https://autosled.com/blog
+- type: GitHubOrganization
+  url: https://github.com/autosled
+- type: DomainSecurity
+  url: security/autosled-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://autosled.com/
+
+  x-coverage:
+    state: unreadable
+    reason: no-machine-readable-spec
+    detail: Unable to resolve or fetch OpenAPI spec from api.autosled.com despite probing common spec endpoints.
+    evidence:
+      - url: https://api.autosled.com/openapi.json
+        status: dns_error
+    checked: 2026-09-26
+
+apis: []
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-09-26'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://www.nasdaqprivatemarket.com/
+    status: 200
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

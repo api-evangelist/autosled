@@ -1,0 +1,70 @@
+generated: '2026-09-26'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 4
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - identity
+  - other
+  - source
+  - website
+hosts:
+- host: api.autosled.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: autosled.com
+  role: api
+  relation: own
+- host: autosled.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - PrivacyPolicy
+  - Newsroom
+  - Blog
+  - Website
+  serves: []
+  registrable_domain: autosled.com
+  role: website
+  relation: own
+- host: dashboard.autosled.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: autosled.com
+  role: other
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: identity.autosled.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: autosled.com
+  role: identity
+  relation: own
